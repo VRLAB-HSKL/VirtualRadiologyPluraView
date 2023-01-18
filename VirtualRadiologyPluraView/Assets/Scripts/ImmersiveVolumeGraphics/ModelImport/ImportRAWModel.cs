@@ -139,7 +139,7 @@ public class ImportRAWModel : MonoBehaviour
 
 
                 VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
-                volobj.name = "Volume Object";
+                volobj.name = "VolObj";
                 if (volobj is null)
                 {
                     Debug.Log("volobj IS NULL");

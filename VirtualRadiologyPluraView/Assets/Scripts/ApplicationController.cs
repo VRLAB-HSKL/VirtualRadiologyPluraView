@@ -26,6 +26,17 @@ public class ApplicationController : MonoBehaviour
 #endif
     }
 
+    private void OnNewPlane()
+    {
+        VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
+        VolumeObjectFactory.SpawnCrossSectionPlane(volobj);
+        GameObject quad = GameObject.Find("Quad");
+        quad.name = "CrossSection";
+        //quad.transform.parent = volobj.gameObject.transform;
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
