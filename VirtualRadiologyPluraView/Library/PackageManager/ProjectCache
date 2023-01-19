@@ -1,25 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/rafae/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages/manifest.json
+    m_FilePath: C:/Users/RHoock/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638088769465474242
-    m_Hash: 1389957667
+      ticks: 638097151867362083
+    m_Hash: 86990152
   m_LockFileStatus:
-    m_FilePath: C:/Users/rafae/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages/packages-lock.json
+    m_FilePath: C:/Users/RHoock/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638088769465552099
-    m_Hash: 1119631363
+      ticks: 638097151867362083
+    m_Hash: 1520534835
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/rafae/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages
+m_ProjectPath: C:/Users/RHoock/Documents/GitHub/VirtualRadiologyPluraView/VirtualRadiologyPluraView/Packages
 m_EditorVersion: 2021.3.15f1 (e8e88683f834)
 m_ResolvedPackages:
 - packageId: com.pathightree.spacenavigator-driver@https://github.com/PatHightree/SpaceNavigator.git
@@ -27,7 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0-pre.9
   source: 5
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.pathightree.spacenavigator-driver@167aef661c
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.pathightree.spacenavigator-driver@167aef661c
   assetPath: Packages/com.pathightree.spacenavigator-driver
   name: com.pathightree.spacenavigator-driver
   displayName: SpaceNavigator Driver
@@ -96,7 +96,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.16
   source: 1
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.ide.visualstudio@2.0.16
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.ide.visualstudio@2.0.16
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -176,7 +176,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.4.4
   source: 1
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.inputsystem@1.4.4
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.inputsystem@1.4.4
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -280,7 +280,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -330,7 +330,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.imgui@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -379,7 +379,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -428,7 +428,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.uielements@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.uielements@1.0.0
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -493,7 +493,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.31
   source: 1
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.test-framework@1.1.31
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.test-framework@1.1.31
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -603,7 +603,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.ui@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -652,7 +652,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
   assetPath: Packages/com.unity.modules.uielementsnative
   name: com.unity.modules.uielementsnative
   displayName: UIElements Native
@@ -712,7 +712,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.6
   source: 1
-  resolvedPath: C:\Users\rafae\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.ext.nunit@1.0.6
+  resolvedPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView\Library\PackageCache\com.unity.ext.nunit@1.0.6
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -721,7 +721,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: asset
+  type: 
   description: Custom version of the nunit package build to work with Unity. Used
     by the Unity Test Framework.
   status: 0
@@ -755,7 +755,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 

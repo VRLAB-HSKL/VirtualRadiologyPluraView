@@ -5,10 +5,15 @@ using System.CommandLine;
 using System.IO;
 using System;
 using UnityVolumeRendering;
+using UnityEngine.InputSystem;
 
-
+[RequireComponent(typeof(PlayerInput))]
 public class ApplicationController : MonoBehaviour
 {
+    public int selectedObj = 0;
+
+    public static List<GameObject> gameObj = new List<GameObject>();
+
 
     private void OnResetObject()
     {
@@ -32,10 +37,37 @@ public class ApplicationController : MonoBehaviour
         VolumeObjectFactory.SpawnCrossSectionPlane(volobj);
         GameObject quad = GameObject.Find("Quad");
         quad.name = "CrossSection";
+        gameObj.Add(quad);
+        selectedObj = gameObj.Count - 1;
         //quad.transform.parent = volobj.gameObject.transform;
 
     }
 
+    private void OnDeletePlane()
+    {
+        if (selectedObj != 0)
+        {
+            var obj = gameObj[selectedObj];
+            gameObj.RemoveAt(selectedObj);
+            Destroy(obj);
+            selectedObj--;
+        }
+    }
+
+    private void OnSelectPlane(InputValue value)
+    {
+        int num = (int)value.Get<float>();
+        if(num == selectedObj)
+        {
+            selectedObj = 0;
+        }
+        else
+        {
+            selectedObj = num;
+        }
+
+        Debug.Log("Nummer : " + num);
+    }
 
     // Update is called once per frame
     void Update()
