@@ -139,7 +139,7 @@ public class ImportRAWModel : MonoBehaviour
 
 
                 VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
-                ApplicationController.gameObj.Add(volobj.gameObject);
+                ApplicationController.gameObjs.Add(volobj.gameObject);
                 volobj.name = "VolObj";
                 if (volobj is null)
                 {
