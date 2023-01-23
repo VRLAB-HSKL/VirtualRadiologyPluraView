@@ -43,47 +43,36 @@ public class ApplicationController : MonoBehaviour
 
     private void OnNewPlane()
     {
-        if(selectedObj != 0)
-        {
-            gameObjs[selectedObj].GetComponent<Renderer>().materials = crossSectionMat;
-        }
         VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
         VolumeObjectFactory.SpawnCrossSectionPlane(volobj);
         GameObject quad = GameObject.Find("Quad");
         quad.name = "CrossSection";
         gameObjs.Add(quad);
-        selectedObj = gameObjs.Count - 1;
         //quad.transform.parent = volobj.gameObject.transform;
-        quad.GetComponent<Renderer>().materials = selectedCrossSectionMat;
+        SelectObj(gameObjs.Count - 1);
     }
 
     private void OnDeletePlane()
     {
         if (selectedObj != 0)
         {
-            var obj = gameObjs[selectedObj];
-            gameObjs.RemoveAt(selectedObj);
+            int oldObj = selectedObj;
+            SelectObj(--selectedObj);
+            var obj = gameObjs[oldObj];
+            gameObjs.RemoveAt(oldObj);
             Destroy(obj);
-            selectedObj--;
+            
         }
     }
 
     private void OnSelectPlane(InputValue value)
     {
-        if (selectedObj != 0)
-        {
-            gameObjs[selectedObj].GetComponent<Renderer>().materials = crossSectionMat;
-        }
         int num = (int)value.Get<float>();
         if(num == selectedObj)
         {
-            selectedObj = 0;
+            num = 0;
         }
-        else if(gameObjs.ElementAtOrDefault(num) != null)
-        {
-            selectedObj = num;
-            gameObjs[selectedObj].GetComponent<Renderer>().materials = selectedCrossSectionMat;
-        }
+        SelectObj(num);
 
         Debug.Log("Nummer : " + num);
     }
@@ -92,5 +81,18 @@ public class ApplicationController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void SelectObj(int idx)
+    {
+        if(selectedObj != 0)
+        {
+            gameObjs[selectedObj].GetComponent<Renderer>().materials = crossSectionMat;
+        }
+        if(idx != 0 && gameObjs.ElementAtOrDefault(idx) != null)
+        {
+            gameObjs[idx].GetComponent<Renderer>().materials = selectedCrossSectionMat;
+        }
+        selectedObj = idx;
     }
 }
