@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 93
+  controlID: 97
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 94
+  controlID: 98
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 95
+  controlID: 99
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -347,22 +347,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 16
+  m_StartGridSize: 49
   m_LastFolders:
-  - Assets/Resources
-  m_LastFoldersGridSize: 16
+  - Assets/Scripts
+  m_LastFoldersGridSize: 49
   m_LastProjectPath: C:\Users\RHoock\Documents\GitHub\VirtualRadiologyPluraView\VirtualRadiologyPluraView
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 72}
-    m_SelectedIDs: 7c450000
-    m_LastClickedID: 17788
-    m_ExpandedIDs: 000000004645000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 84450000
+    m_LastClickedID: 17796
+    m_ExpandedIDs: 000000004445000084450000ce450000d045000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000046450000
+    m_ExpandedIDs: 0000000044450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -443,7 +443,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
+    m_GridSize: 49
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &14
@@ -520,9 +520,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 04a2ffff
-      m_LastClickedID: -24060
-      m_ExpandedIDs: 24a3ffff92a5ffffcaaeffffbeb1ffff5eb4ffffd4bbffff94c2ffff0ec5ffff16c9ffff70cfffff6cd1ffffe6d3ffff9cd5ffff06d8ffff86daffff78e3ffff58e6ffff2aeaffffe2ecffff9aeeffff2afbffff
+      m_SelectedIDs: 00070000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8ea1ffff6ca5ffffbaa5ffff34a6ffff60abffff2cbdffff50bfffff3ac7fffff4ceffff9adcffff60e7ffffacecffff5af0ffff0cf4ffff0cfaffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -805,9 +805,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.5246208, y: -0.9546731, z: 8.047323}
+    m_Target: {x: -323.78723, y: -9.41896, z: 88.09587}
     speed: 2
-    m_Value: {x: 3.5246208, y: -0.9546731, z: 8.047323}
+    m_Value: {x: -323.78708, y: -9.419003, z: 88.095795}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -854,13 +854,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.05863774, y: -0.23086837, z: 0.0139418235, w: -0.97111493}
+    m_Target: {x: 0.71647984, y: -0.37841383, z: 0.53003705, w: 0.25004098}
     speed: 2
-    m_Value: {x: -0.058637824, y: -0.2308687, z: 0.013941843, w: -0.9711163}
+    m_Value: {x: 0.71647686, y: -0.37841085, z: 0.5300487, w: 0.2500293}
   m_Size:
-    m_Target: 4.9133096
+    m_Target: 4.6922107
     speed: 2
-    m_Value: 4.9133096
+    m_Value: 4.6922107
   m_Ortho:
     m_Target: 0
     speed: 2

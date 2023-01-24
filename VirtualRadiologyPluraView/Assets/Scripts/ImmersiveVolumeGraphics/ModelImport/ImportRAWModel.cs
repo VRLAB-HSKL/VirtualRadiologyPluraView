@@ -175,7 +175,7 @@ public class ImportRAWModel : MonoBehaviour
                     //yield return null;
                 }
 
-                volobj.gameObject.AddComponent(typeof(moveCube));
+                volobj.gameObject.AddComponent(typeof(MoveCube));
                 //volobj.gameObject.AddComponent(typeof(PlayerControls));
             }
         }

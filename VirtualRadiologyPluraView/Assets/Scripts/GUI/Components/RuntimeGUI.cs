@@ -19,7 +19,7 @@ namespace UnityVolumeRendering
 
             
             // Show dataset import buttons
-            if(GUILayout.Button("Import RAW dataset"))
+            /*if(GUILayout.Button("Import RAW dataset"))
             {
                 RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, "DataFiles");
             }
@@ -32,7 +32,7 @@ namespace UnityVolumeRendering
             if (GUILayout.Button("Import DICOM dataset"))
             {
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
-            }
+            }*/
 
             // Show button for opening the dataset editor (for changing the visualisation)
             if (GameObject.FindObjectOfType<VolumeRenderedObject>() != null && GUILayout.Button("Edit imported dataset"))

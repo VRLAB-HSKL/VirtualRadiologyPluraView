@@ -1,11 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class MoveCube : MonoBehaviour
+public class MoveSlice : MonoBehaviour
 {
-	public float moveSpeed = 1;
+    public float moveSpeed = 1;
     PlayerControls controls;
     Vector3 move;
     Vector3 rotate;
@@ -34,14 +33,14 @@ public class MoveCube : MonoBehaviour
 
         // transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
-		var trans = new Vector3(move.x, move.y, move.z);
-		var newPos = transform.position + trans;
+        var trans = new Vector3(move.x, move.y, move.z);
+        var newPos = transform.position + trans;
 
-		transform.position = Vector3.MoveTowards(
-			transform.position,
-			newPos,
-			moveSpeed * Time.deltaTime * trans.magnitude
-		);
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            newPos,
+            moveSpeed * Time.deltaTime * trans.magnitude
+        );
 
 
         transform.Rotate(Vector3.up * rotate.y, Space.World);
@@ -49,11 +48,13 @@ public class MoveCube : MonoBehaviour
         transform.Rotate(Vector3.right * rotate.x, Space.World);
     }
 
-    void OnEnable(){
+    void OnEnable()
+    {
         controls.PlayerMovement.Enable();
     }
 
-    void OnDisable(){
+    void OnDisable()
+    {
         controls.PlayerMovement.Disable();
     }
 
@@ -61,6 +62,7 @@ public class MoveCube : MonoBehaviour
     {
         transform.position = new Vector3(0, 0, 0);
         transform.rotation = Quaternion.Euler(90, 0, 0);
+
 
     }
 }

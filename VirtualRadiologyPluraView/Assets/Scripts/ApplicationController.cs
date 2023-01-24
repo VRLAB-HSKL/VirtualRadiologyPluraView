@@ -43,13 +43,18 @@ public class ApplicationController : MonoBehaviour
 
     private void OnNewPlane()
     {
-        VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
-        VolumeObjectFactory.SpawnCrossSectionPlane(volobj);
-        GameObject quad = GameObject.Find("Quad");
-        quad.name = "CrossSection";
-        gameObjs.Add(quad);
-        //quad.transform.parent = volobj.gameObject.transform;
-        SelectObj(gameObjs.Count - 1);
+        if(gameObjs.Count < 9)
+        {
+            VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
+            VolumeObjectFactory.SpawnCrossSectionPlane(volobj);
+            GameObject quad = GameObject.Find("Quad");
+            quad.name = "CrossSection";
+            quad.gameObject.AddComponent(typeof(MoveSlice));
+            gameObjs.Add(quad);
+            //quad.transform.parent = volobj.gameObject.transform;
+            SelectObj(gameObjs.Count - 1);
+        }
+        
     }
 
     private void OnDeletePlane()
@@ -57,7 +62,8 @@ public class ApplicationController : MonoBehaviour
         if (selectedObj != 0)
         {
             int oldObj = selectedObj;
-            SelectObj(--selectedObj);
+            selectedObj -= 1;
+            SelectObj(selectedObj);
             var obj = gameObjs[oldObj];
             gameObjs.RemoveAt(oldObj);
             Destroy(obj);
@@ -85,14 +91,32 @@ public class ApplicationController : MonoBehaviour
 
     private void SelectObj(int idx)
     {
-        if(selectedObj != 0)
+        
+        if(0 <= idx && idx < gameObjs.Count)
         {
-            gameObjs[selectedObj].GetComponent<Renderer>().materials = crossSectionMat;
+
+            if (selectedObj != 0)
+            {
+                gameObjs[selectedObj].GetComponent<Renderer>().materials = crossSectionMat;
+                gameObjs[selectedObj].GetComponent<MoveSlice>().enabled = false;
+
+            }
+            else
+            {
+                gameObjs[selectedObj].GetComponent<MoveCube>().enabled = false;
+            }
+
+            if (idx != 0)
+            {
+                gameObjs[idx].GetComponent<Renderer>().materials = selectedCrossSectionMat;
+                gameObjs[idx].GetComponent<MoveSlice>().enabled = true;
+            }
+            else
+            {
+                gameObjs[idx].GetComponent<MoveCube>().enabled = true;
+            }
+            selectedObj = idx;
         }
-        if(idx != 0 && gameObjs.ElementAtOrDefault(idx) != null)
-        {
-            gameObjs[idx].GetComponent<Renderer>().materials = selectedCrossSectionMat;
-        }
-        selectedObj = idx;
+        
     }
 }
