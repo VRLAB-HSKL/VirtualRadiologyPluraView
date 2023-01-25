@@ -344,6 +344,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0fc16a63-57d2-4e0b-b739-4e7018bcd56d",
+                    "path": "<Keyboard>/numpadPlus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NewPlane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "33b6bc30-c0ba-4f84-bd53-5147aea2f9c4",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -357,6 +368,17 @@
                     "name": "",
                     "id": "b938f1a7-5144-4174-9495-87f2e21908ba",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeletePlane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea22a482-c933-404c-9c25-ffa0592b9b28",
+                    "path": "<Keyboard>/numpadMinus",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

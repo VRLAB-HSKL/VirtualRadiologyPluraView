@@ -11,16 +11,16 @@ using System.Linq;
 [RequireComponent(typeof(PlayerInput))]
 public class ApplicationController : MonoBehaviour
 {
-    public int selectedObj = 0;
+    public static int selectedObj = 0;
 
     public static List<GameObject> gameObjs = new List<GameObject>();
-    Material[] selectedCrossSectionMat;
-    Material[] crossSectionMat;
+    
+    static Material[] crossSectionMat = new Material[1];
+    static Material[] selectedCrossSectionMat = new Material[1];
 
     private void Awake()
     {
-        crossSectionMat = new Material[1];
-        selectedCrossSectionMat = new Material[1];
+
         selectedCrossSectionMat[0] = Resources.Load<Material>("SelectedCrossSectionPlaneMat");
         crossSectionMat[0] = Resources.Load<Material>("CrossSectionPlaneMat");
     }
@@ -61,23 +61,20 @@ public class ApplicationController : MonoBehaviour
     {
         if (selectedObj != 0)
         {
+            Debug.Log(selectedObj);
             int oldObj = selectedObj;
-            selectedObj -= 1;
-            SelectObj(selectedObj);
+            SelectObj(selectedObj-1);
             var obj = gameObjs[oldObj];
             gameObjs.RemoveAt(oldObj);
             Destroy(obj);
-            
+            Debug.Log(selectedObj);
         }
     }
 
     private void OnSelectPlane(InputValue value)
     {
         int num = (int)value.Get<float>();
-        if(num == selectedObj)
-        {
-            num = 0;
-        }
+        
         SelectObj(num);
 
         Debug.Log("Nummer : " + num);
@@ -89,10 +86,14 @@ public class ApplicationController : MonoBehaviour
         
     }
 
-    private void SelectObj(int idx)
+    public static void SelectObj(int idx)
     {
-        
-        if(0 <= idx && idx < gameObjs.Count)
+        if (idx == selectedObj)
+        {
+            idx = 0;
+        }
+
+        if (0 <= idx && idx < gameObjs.Count)
         {
 
             if (selectedObj != 0)

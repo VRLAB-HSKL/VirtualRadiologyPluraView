@@ -13,18 +13,19 @@ namespace UnityVolumeRendering
     /// </summary>
     public class RuntimeGUI : MonoBehaviour
     {
+        
         private void OnGUI()
         {
             GUILayout.BeginVertical();
 
-            
-            // Show dataset import buttons
-            /*if(GUILayout.Button("Import RAW dataset"))
+
+            /*// Show dataset import buttons
+            if (GUILayout.Button("Import RAW dataset"))
             {
                 RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, "DataFiles");
             }
 
-            if(GUILayout.Button("Import PARCHG dataset"))
+            if (GUILayout.Button("Import PARCHG dataset"))
             {
                 RuntimeFileBrowser.ShowOpenFileDialog(OnOpenPARDatasetResult, "DataFiles");
             }
@@ -45,13 +46,43 @@ namespace UnityVolumeRendering
             {
                 EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
             }
-            
+
             if (GUILayout.Button("Show distance measure tool"))
             {
                 DistanceMeasureTool.ShowWindow();
             }
 
             GUILayout.EndVertical();
+
+            Rect rect = new Rect(0, Screen.height - 20, Screen.width, 20);
+
+            GUILayout.BeginArea(rect);
+            GUILayout.BeginHorizontal();
+            for(int i=0; i< ApplicationController.gameObjs.Count; i++)
+            {
+                if(i == 0)
+                {
+                    if (GUILayout.Button($"Scan"))
+                    {
+                        ApplicationController.SelectObj(i);
+
+                    }
+                }
+                else
+                {
+                    if (GUILayout.Button($"Schnittebene {i}"))
+                    {
+                        ApplicationController.SelectObj(i);
+
+                    }
+                }
+                
+            }
+            
+         
+            GUILayout.EndHorizontal();
+            GUILayout.EndArea();
+
         }
 
         private void OnOpenPARDatasetResult(RuntimeFileBrowser.DialogResult result)
