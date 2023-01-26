@@ -13,9 +13,22 @@ namespace UnityVolumeRendering
     /// </summary>
     public class RuntimeGUI : MonoBehaviour
     {
-        
+
+        GUIStyle activeButtonStyle;
+        GUIStyle normalButtonStyle;
+        int selected;
+
         private void OnGUI()
         {
+            activeButtonStyle = new GUIStyle(GUI.skin.button);
+            activeButtonStyle.active.textColor = Color.white;
+            activeButtonStyle.normal = activeButtonStyle.active;
+
+            normalButtonStyle = new GUIStyle(GUI.skin.button);
+            normalButtonStyle.normal.textColor = Color.black;
+
+            selected = ApplicationController.selectedObj;
+
             GUILayout.BeginVertical();
 
 
@@ -62,24 +75,45 @@ namespace UnityVolumeRendering
             {
                 if(i == 0)
                 {
-                    if (GUILayout.Button($"Scan"))
+                    if (selected == i)
                     {
-                        ApplicationController.SelectObj(i);
+                        if (GUILayout.Button($"Scan", activeButtonStyle))
+                        {
+                            ApplicationController.SelectObj(i);
 
+                        }
+                    }
+                    else
+                    {
+                        if (GUILayout.Button($"Scan", normalButtonStyle))
+                        {
+                            ApplicationController.SelectObj(i);
+
+                        }
                     }
                 }
                 else
                 {
-                    if (GUILayout.Button($"Schnittebene {i}"))
+                    if (selected == i)
                     {
-                        ApplicationController.SelectObj(i);
+                        if (GUILayout.Button($"Schnittebene {i}", activeButtonStyle))
+                        {
+                            ApplicationController.SelectObj(i);
 
+                        }
+                    }
+                    else
+                    {
+                        if (GUILayout.Button($"Schnittebene {i}", normalButtonStyle))
+                        {
+                            ApplicationController.SelectObj(i);
+
+                        }
                     }
                 }
                 
             }
-            
-         
+
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
 
