@@ -244,13 +244,31 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SelectPlane",
+                    "name": "SelectObject",
                     "type": "Button",
                     "id": "ce8cbf6f-f4e7-4c92-8af2-92755a7e469a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "NextObject",
+                    "type": "Button",
+                    "id": "f3cbe01d-e758-458e-8fe7-4ae75e8af7be",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousObject",
+                    "type": "Button",
+                    "id": "07888f9e-8b31-40c9-bd13-3d72969f6669",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -393,7 +411,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=0)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -404,7 +422,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=0)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -415,7 +433,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -426,7 +444,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -437,7 +455,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -448,7 +466,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -459,7 +477,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=3)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -470,7 +488,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=3)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -481,7 +499,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=4)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -492,7 +510,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=4)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -503,7 +521,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=5)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -514,7 +532,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=5)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -525,7 +543,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=6)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -536,7 +554,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=6)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -547,7 +565,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=7)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -558,7 +576,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=7)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -569,7 +587,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=8)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -580,7 +598,73 @@
                     "interactions": "",
                     "processors": "Scale(factor=8)",
                     "groups": "",
-                    "action": "SelectPlane",
+                    "action": "SelectObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30eeaf22-4a8a-406a-b988-4e1b492f9dbf",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfd7cac0-d90d-4d59-b2c0-b0d728787953",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ace8e1bf-07de-41f7-bf41-539a75fdb7c1",
+                    "path": "<Keyboard>/pageUp",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fe1a992-1e90-4eea-badf-4b3e049b8695",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8385605-6b90-4c18-9521-37e4dff16a6b",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddd95680-9044-472d-b779-7a2aa41b9603",
+                    "path": "<Keyboard>/pageDown",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

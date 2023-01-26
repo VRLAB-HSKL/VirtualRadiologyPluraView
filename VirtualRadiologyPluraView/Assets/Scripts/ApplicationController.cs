@@ -71,7 +71,7 @@ public class ApplicationController : MonoBehaviour
         }
     }
 
-    private void OnSelectPlane(InputValue value)
+    private void OnSelectObject(InputValue value)
     {
         int num = (int)value.Get<float>();
         
@@ -84,6 +84,16 @@ public class ApplicationController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnNextObject()
+    {
+        SelectObj((selectedObj + 1) % gameObjs.Count);
+    }
+
+    private void OnPreviousObject()
+    {
+        SelectObj((selectedObj - 1) % gameObjs.Count);
     }
 
     public static void SelectObj(int idx)
