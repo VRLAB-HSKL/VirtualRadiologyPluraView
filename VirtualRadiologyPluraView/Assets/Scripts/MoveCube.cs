@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MoveCube : MonoBehaviour
 {
-	public float moveSpeed = 1;
+	public float moveSpeed = 5;
     PlayerControls controls;
     Vector3 move;
     Vector3 rotate;
