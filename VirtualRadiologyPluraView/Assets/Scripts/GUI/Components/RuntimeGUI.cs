@@ -21,11 +21,12 @@ namespace UnityVolumeRendering
         private void OnGUI()
         {
             activeButtonStyle = new GUIStyle(GUI.skin.button);
-            activeButtonStyle.active.textColor = Color.white;
-            activeButtonStyle.normal = activeButtonStyle.active;
+            activeButtonStyle.normal.textColor = Color.black;
+            activeButtonStyle.normal.background = Texture2D.whiteTexture;
 
             normalButtonStyle = new GUIStyle(GUI.skin.button);
-            normalButtonStyle.normal.textColor = Color.black;
+            normalButtonStyle.normal.textColor = Color.white;
+            normalButtonStyle.normal.background = Texture2D.grayTexture;
 
             selected = ApplicationController.selectedObj;
 

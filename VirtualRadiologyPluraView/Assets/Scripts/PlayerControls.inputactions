@@ -107,7 +107,7 @@
                     "id": "98010a62-8cbf-4abc-a37f-1aa5efb20fad",
                     "path": "<SpaceNavigatorHID>/translation",
                     "interactions": "",
-                    "processors": "Scale(factor=10),ScaleVector3(x=10,y=10,z=10)",
+                    "processors": "",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": false,
