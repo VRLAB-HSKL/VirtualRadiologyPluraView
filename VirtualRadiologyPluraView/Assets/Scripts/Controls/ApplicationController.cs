@@ -93,7 +93,11 @@ public class ApplicationController : MonoBehaviour
 
     private void OnPreviousObject()
     {
-        SelectObj((selectedObj - 1) % gameObjs.Count);
+        if (selectedObj > 0)
+        {
+            SelectObj(selectedObj - 1);
+        }
+        //SelectObj((selectedObj - 1) % gameObjs.Count);
     }
 
     public static void SelectObj(int idx)
