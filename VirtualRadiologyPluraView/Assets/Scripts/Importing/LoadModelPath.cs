@@ -26,17 +26,14 @@ public class LoadModelPath : MonoBehaviour
                 case "-asset_folder_path":
                 case "--ap":
                 case "-ap":
-
                     if (i + 1 >= args.Length)
                     {
-                        //Debug.LogError("No path given to -p flag!");
-                        Console.WriteLine("No asset folder path given to -ap flag!");
+                        Debug.Log("No path given to -ap flag!");
                         return;
                     }
 
                     ImportRAWModel.AssetFolderPath = args[i + 1];
-                    Console.WriteLine("Using asset folder: " + ImportRAWModel.AssetFolderPath);
-
+                    Debug.Log("Using asset folder: " + ImportRAWModel.AssetFolderPath);
                     break;
 
                 case "--model":
@@ -46,17 +43,14 @@ public class LoadModelPath : MonoBehaviour
 
                     if (i + 1 >= args.Length)
                     {
-                        Console.WriteLine("No model name given to -m flag!");
+                        Debug.Log("No model name given to -m flag!");
                         return;
                     }
 
                     ImportRAWModel.ModelName = args[i + 1];
-                    Console.WriteLine("Using model: " + ImportRAWModel.ModelName);
-
+                    Debug.Log("Using model: " + ImportRAWModel.ModelName);
                     break;
             }
-
-            
         }
 
         if (!string.IsNullOrEmpty(ImportRAWModel.AssetFolderPath))

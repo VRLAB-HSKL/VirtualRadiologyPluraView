@@ -139,7 +139,7 @@ public class ImportRAWModel : MonoBehaviour
 
 
                 VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
-               
+
                 ApplicationController.gameObjs.Add(volobj.gameObject);
                 volobj.name = "VolObj";
                 if (volobj is null)
@@ -175,9 +175,7 @@ public class ImportRAWModel : MonoBehaviour
 
                     //yield return null;
                 }
-
                 volobj.gameObject.AddComponent(typeof(MoveCube));
-                //volobj.gameObject.AddComponent(typeof(PlayerControls));
             }
         }
 

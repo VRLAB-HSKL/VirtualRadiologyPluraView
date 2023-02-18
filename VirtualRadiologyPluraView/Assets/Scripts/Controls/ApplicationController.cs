@@ -14,7 +14,7 @@ public class ApplicationController : MonoBehaviour
     public static int selectedObj = 0;
 
     public static List<GameObject> gameObjs = new List<GameObject>();
-    
+
     static Material[] crossSectionMat = new Material[1];
     static Material[] selectedCrossSectionMat = new Material[1];
 
@@ -54,7 +54,7 @@ public class ApplicationController : MonoBehaviour
             //quad.transform.parent = volobj.gameObject.transform;
             SelectObj(gameObjs.Count - 1);
         }
-        
+
     }
 
     private void OnDeletePlane()
@@ -74,7 +74,7 @@ public class ApplicationController : MonoBehaviour
     private void OnSelectObject(InputValue value)
     {
         int num = (int)value.Get<float>();
-        
+
         SelectObj(num);
 
         Debug.Log("Nummer : " + num);
@@ -83,7 +83,7 @@ public class ApplicationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnNextObject()
@@ -132,6 +132,5 @@ public class ApplicationController : MonoBehaviour
             }
             selectedObj = idx;
         }
-        
     }
 }
