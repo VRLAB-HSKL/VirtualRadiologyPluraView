@@ -103,7 +103,7 @@ public class LoadModelPath : MonoBehaviour
         if (importer != null)
         {
             Debug.Log("Importing initial data");
-            importer.OpenRAWData();    
+            importer.OpenRAWData();
             StartCoroutine(importer.OpenRawDataRoutine());
         }
     }

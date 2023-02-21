@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.CommandLine;
 using System.IO;
 using System;
 using UnityVolumeRendering;
@@ -25,7 +24,7 @@ public class ApplicationController : MonoBehaviour
         crossSectionMat[0] = Resources.Load<Material>("CrossSectionPlaneMat");
     }
 
-        private void OnResetObject()
+    private void OnResetObject()
     {
         VolumeRenderedObject volobj = FindObjectOfType<VolumeRenderedObject>();
         volobj.gameObject.transform.position = new Vector3(0, 0, 0.5f);

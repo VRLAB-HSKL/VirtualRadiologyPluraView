@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 namespace UnityVolumeRendering
 {
@@ -33,18 +34,18 @@ namespace UnityVolumeRendering
             GUILayout.BeginVertical();
 
 
-            /*// Show dataset import buttons
+            // Show dataset import buttons
             if (GUILayout.Button("Import RAW dataset"))
             {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, "DataFiles");
+                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, ImportRAWModel.AssetFolderPath);
             }
 
-            if (GUILayout.Button("Import PARCHG dataset"))
+            /*if (GUILayout.Button("Import PARCHG dataset"))
             {
                 RuntimeFileBrowser.ShowOpenFileDialog(OnOpenPARDatasetResult, "DataFiles");
-            }
+            }*/
 
-            if (GUILayout.Button("Import DICOM dataset"))
+           /* if (GUILayout.Button("Import DICOM dataset"))
             {
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
             }*/
@@ -61,10 +62,10 @@ namespace UnityVolumeRendering
                 EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
             }
 
-            if (GUILayout.Button("Show distance measure tool"))
+          /*  if (GUILayout.Button("Show distance measure tool"))
             {
                 DistanceMeasureTool.ShowWindow();
-            }
+            }*/
 
             GUILayout.EndVertical();
 
@@ -72,9 +73,9 @@ namespace UnityVolumeRendering
 
             GUILayout.BeginArea(rect);
             GUILayout.BeginHorizontal();
-            for(int i=0; i< ApplicationController.gameObjs.Count; i++)
+            for (int i = 0; i < ApplicationController.gameObjs.Count; i++)
             {
-                if(i == 0)
+                if (i == 0)
                 {
                     if (selected == i)
                     {
@@ -112,7 +113,7 @@ namespace UnityVolumeRendering
                         }
                     }
                 }
-                
+
             }
 
             GUILayout.EndHorizontal();
@@ -135,7 +136,7 @@ namespace UnityVolumeRendering
             }
         }
         
-        private void OnOpenRAWDatasetResult(RuntimeFileBrowser.DialogResult result)
+        public void OnOpenRAWDatasetResult(RuntimeFileBrowser.DialogResult result)
         {
             if(!result.cancelled)
             {
@@ -145,21 +146,18 @@ namespace UnityVolumeRendering
 
                 // Did the user try to import an .ini-file? Open the corresponding .raw file instead
                 string filePath = result.path;
-                if (System.IO.Path.GetExtension(filePath) == ".ini")
-                    filePath = filePath.Substring(0, filePath.Length - 4);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                //Debug.Log(fileName);
+                ImportRAWModel.ModelName = fileName;
+                Debug.Log("Model path load - " + ImportRAWModel.ModelPath);
 
-                // Parse .ini file
-                DatasetIniData initData = DatasetIniReader.ParseIniFile(filePath + ".ini");
-                if(initData != null)
+
+                var importer = FindObjectOfType<ImportRAWModel>();
+                if (importer != null)
                 {
-                    // Import the dataset
-                    RawDatasetImporter importer = new RawDatasetImporter(filePath, initData.dimX, initData.dimY, initData.dimZ, initData.format, initData.endianness, initData.bytesToSkip);
-                    VolumeDataset dataset = importer.Import();
-                    // Spawn the object
-                    if (dataset != null)
-                    {
-                        VolumeObjectFactory.CreateObject(dataset);
-                    }
+                    Debug.Log("Importing initial data");
+                    importer.OpenRAWData();
+                    StartCoroutine(importer.OpenRawDataRoutine());
                 }
             }
         }
