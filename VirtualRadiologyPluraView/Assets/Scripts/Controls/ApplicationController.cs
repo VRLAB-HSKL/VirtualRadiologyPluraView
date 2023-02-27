@@ -50,7 +50,6 @@ public class ApplicationController : MonoBehaviour
             quad.name = "CrossSection";
             quad.gameObject.AddComponent(typeof(MoveSlice));
             gameObjs.Add(quad);
-            //quad.transform.parent = volobj.gameObject.transform;
             SelectObj(gameObjs.Count - 1);
         }
 
@@ -96,7 +95,6 @@ public class ApplicationController : MonoBehaviour
         {
             SelectObj(selectedObj - 1);
         }
-        //SelectObj((selectedObj - 1) % gameObjs.Count);
     }
 
     public static void SelectObj(int idx)

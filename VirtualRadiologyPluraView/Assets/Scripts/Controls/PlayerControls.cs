@@ -226,7 +226,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""ApplicationConrols"",
+            ""name"": ""ApplicationControls"",
             ""id"": ""8e7ded8a-c78d-4654-b625-c855d3e168d6"",
             ""actions"": [
                 {
@@ -655,15 +655,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Rotation = m_PlayerMovement.FindAction("Rotation", throwIfNotFound: true);
-        // ApplicationConrols
-        m_ApplicationConrols = asset.FindActionMap("ApplicationConrols", throwIfNotFound: true);
-        m_ApplicationConrols_Quit = m_ApplicationConrols.FindAction("Quit", throwIfNotFound: true);
-        m_ApplicationConrols_ResetObject = m_ApplicationConrols.FindAction("ResetObject", throwIfNotFound: true);
-        m_ApplicationConrols_NewPlane = m_ApplicationConrols.FindAction("NewPlane", throwIfNotFound: true);
-        m_ApplicationConrols_DeletePlane = m_ApplicationConrols.FindAction("DeletePlane", throwIfNotFound: true);
-        m_ApplicationConrols_SelectObject = m_ApplicationConrols.FindAction("SelectObject", throwIfNotFound: true);
-        m_ApplicationConrols_NextObject = m_ApplicationConrols.FindAction("NextObject", throwIfNotFound: true);
-        m_ApplicationConrols_PreviousObject = m_ApplicationConrols.FindAction("PreviousObject", throwIfNotFound: true);
+        // ApplicationControls
+        m_ApplicationControls = asset.FindActionMap("ApplicationControls", throwIfNotFound: true);
+        m_ApplicationControls_Quit = m_ApplicationControls.FindAction("Quit", throwIfNotFound: true);
+        m_ApplicationControls_ResetObject = m_ApplicationControls.FindAction("ResetObject", throwIfNotFound: true);
+        m_ApplicationControls_NewPlane = m_ApplicationControls.FindAction("NewPlane", throwIfNotFound: true);
+        m_ApplicationControls_DeletePlane = m_ApplicationControls.FindAction("DeletePlane", throwIfNotFound: true);
+        m_ApplicationControls_SelectObject = m_ApplicationControls.FindAction("SelectObject", throwIfNotFound: true);
+        m_ApplicationControls_NextObject = m_ApplicationControls.FindAction("NextObject", throwIfNotFound: true);
+        m_ApplicationControls_PreviousObject = m_ApplicationControls.FindAction("PreviousObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -761,59 +761,59 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
 
-    // ApplicationConrols
-    private readonly InputActionMap m_ApplicationConrols;
-    private IApplicationConrolsActions m_ApplicationConrolsActionsCallbackInterface;
-    private readonly InputAction m_ApplicationConrols_Quit;
-    private readonly InputAction m_ApplicationConrols_ResetObject;
-    private readonly InputAction m_ApplicationConrols_NewPlane;
-    private readonly InputAction m_ApplicationConrols_DeletePlane;
-    private readonly InputAction m_ApplicationConrols_SelectObject;
-    private readonly InputAction m_ApplicationConrols_NextObject;
-    private readonly InputAction m_ApplicationConrols_PreviousObject;
-    public struct ApplicationConrolsActions
+    // ApplicationControls
+    private readonly InputActionMap m_ApplicationControls;
+    private IApplicationControlsActions m_ApplicationControlsActionsCallbackInterface;
+    private readonly InputAction m_ApplicationControls_Quit;
+    private readonly InputAction m_ApplicationControls_ResetObject;
+    private readonly InputAction m_ApplicationControls_NewPlane;
+    private readonly InputAction m_ApplicationControls_DeletePlane;
+    private readonly InputAction m_ApplicationControls_SelectObject;
+    private readonly InputAction m_ApplicationControls_NextObject;
+    private readonly InputAction m_ApplicationControls_PreviousObject;
+    public struct ApplicationControlsActions
     {
         private @PlayerControls m_Wrapper;
-        public ApplicationConrolsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Quit => m_Wrapper.m_ApplicationConrols_Quit;
-        public InputAction @ResetObject => m_Wrapper.m_ApplicationConrols_ResetObject;
-        public InputAction @NewPlane => m_Wrapper.m_ApplicationConrols_NewPlane;
-        public InputAction @DeletePlane => m_Wrapper.m_ApplicationConrols_DeletePlane;
-        public InputAction @SelectObject => m_Wrapper.m_ApplicationConrols_SelectObject;
-        public InputAction @NextObject => m_Wrapper.m_ApplicationConrols_NextObject;
-        public InputAction @PreviousObject => m_Wrapper.m_ApplicationConrols_PreviousObject;
-        public InputActionMap Get() { return m_Wrapper.m_ApplicationConrols; }
+        public ApplicationControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Quit => m_Wrapper.m_ApplicationControls_Quit;
+        public InputAction @ResetObject => m_Wrapper.m_ApplicationControls_ResetObject;
+        public InputAction @NewPlane => m_Wrapper.m_ApplicationControls_NewPlane;
+        public InputAction @DeletePlane => m_Wrapper.m_ApplicationControls_DeletePlane;
+        public InputAction @SelectObject => m_Wrapper.m_ApplicationControls_SelectObject;
+        public InputAction @NextObject => m_Wrapper.m_ApplicationControls_NextObject;
+        public InputAction @PreviousObject => m_Wrapper.m_ApplicationControls_PreviousObject;
+        public InputActionMap Get() { return m_Wrapper.m_ApplicationControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ApplicationConrolsActions set) { return set.Get(); }
-        public void SetCallbacks(IApplicationConrolsActions instance)
+        public static implicit operator InputActionMap(ApplicationControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IApplicationControlsActions instance)
         {
-            if (m_Wrapper.m_ApplicationConrolsActionsCallbackInterface != null)
+            if (m_Wrapper.m_ApplicationControlsActionsCallbackInterface != null)
             {
-                @Quit.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnQuit;
-                @ResetObject.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnResetObject;
-                @ResetObject.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnResetObject;
-                @ResetObject.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnResetObject;
-                @NewPlane.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNewPlane;
-                @NewPlane.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNewPlane;
-                @NewPlane.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNewPlane;
-                @DeletePlane.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnDeletePlane;
-                @DeletePlane.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnDeletePlane;
-                @DeletePlane.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnDeletePlane;
-                @SelectObject.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnSelectObject;
-                @SelectObject.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnSelectObject;
-                @SelectObject.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnSelectObject;
-                @NextObject.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNextObject;
-                @NextObject.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNextObject;
-                @NextObject.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnNextObject;
-                @PreviousObject.started -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnPreviousObject;
-                @PreviousObject.performed -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnPreviousObject;
-                @PreviousObject.canceled -= m_Wrapper.m_ApplicationConrolsActionsCallbackInterface.OnPreviousObject;
+                @Quit.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnQuit;
+                @ResetObject.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnResetObject;
+                @ResetObject.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnResetObject;
+                @ResetObject.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnResetObject;
+                @NewPlane.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNewPlane;
+                @NewPlane.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNewPlane;
+                @NewPlane.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNewPlane;
+                @DeletePlane.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnDeletePlane;
+                @DeletePlane.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnDeletePlane;
+                @DeletePlane.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnDeletePlane;
+                @SelectObject.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnSelectObject;
+                @SelectObject.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnSelectObject;
+                @SelectObject.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnSelectObject;
+                @NextObject.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNextObject;
+                @NextObject.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNextObject;
+                @NextObject.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnNextObject;
+                @PreviousObject.started -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnPreviousObject;
+                @PreviousObject.performed -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnPreviousObject;
+                @PreviousObject.canceled -= m_Wrapper.m_ApplicationControlsActionsCallbackInterface.OnPreviousObject;
             }
-            m_Wrapper.m_ApplicationConrolsActionsCallbackInterface = instance;
+            m_Wrapper.m_ApplicationControlsActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Quit.started += instance.OnQuit;
@@ -840,13 +840,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public ApplicationConrolsActions @ApplicationConrols => new ApplicationConrolsActions(this);
+    public ApplicationControlsActions @ApplicationControls => new ApplicationControlsActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
     }
-    public interface IApplicationConrolsActions
+    public interface IApplicationControlsActions
     {
         void OnQuit(InputAction.CallbackContext context);
         void OnResetObject(InputAction.CallbackContext context);

@@ -49,8 +49,8 @@ public class ImportRAWModel : MonoBehaviour
 
     public IEnumerator OpenRAWData()
     {
-        var initDataPath = InitDataPath; // ModelPath + ".ini";  //Application.streamingAssetsPath + "/" + ModelPath + ".ini";
-        var rawDataPath = RawDataPath; //ModelPath + ".raw"; //Application.streamingAssetsPath + "/" + ModelPath + ".raw";
+        var initDataPath = InitDataPath;
+        var rawDataPath = RawDataPath;
         InitalizationData = DatasetIniReader.ParseIniFile(initDataPath);
         Debug.Log("initDataPath: " + initDataPath);
         Debug.Log("rawDataPath: " + rawDataPath);
@@ -65,7 +65,6 @@ public class ImportRAWModel : MonoBehaviour
         if (InitalizationData != null)
         {
             // Import the dataset
-            //RawDatasetImporter importer = new RawDatasetImporter(Application.dataPath + "/StreamingAssets/" + ModelPath + ".raw", InitalizationData.dimX, InitalizationData.dimY, InitalizationData.dimZ, InitalizationData.format, InitalizationData.endianness, InitalizationData.bytesToSkip);
             RawDatasetImporter importer = new RawDatasetImporter(
                 rawDataPath,
                 InitalizationData.dimX, InitalizationData.dimY, InitalizationData.dimZ,
@@ -83,8 +82,8 @@ public class ImportRAWModel : MonoBehaviour
 
     public IEnumerator OpenRawDataRoutine()
     {
-        var initDataPath = InitDataPath; // ModelPath + ".ini";  //Application.streamingAssetsPath + "/" + ModelPath + ".ini";
-        var rawDataPath = RawDataPath; //ModelPath + ".raw"; //Application.streamingAssetsPath + "/" + ModelPath + ".raw";
+        var initDataPath = InitDataPath;
+        var rawDataPath = RawDataPath;
         InitalizationData = DatasetIniReader.ParseIniFile(initDataPath);
         Debug.Log("initDataPath: " + initDataPath);
         Debug.Log("rawDataPath: " + rawDataPath);
@@ -100,7 +99,6 @@ public class ImportRAWModel : MonoBehaviour
         if (InitalizationData != null)
         {
             // Import the dataset
-            //RawDatasetImporter importer = new RawDatasetImporter(Application.dataPath + "/StreamingAssets/" + ModelPath + ".raw", InitalizationData.dimX, InitalizationData.dimY, InitalizationData.dimZ, InitalizationData.format, InitalizationData.endianness, InitalizationData.bytesToSkip);
             RawDatasetImporter importer = new RawDatasetImporter(
                 rawDataPath,
                 InitalizationData.dimX, InitalizationData.dimY, InitalizationData.dimZ,
@@ -112,7 +110,6 @@ public class ImportRAWModel : MonoBehaviour
             var sb = new StringBuilder();
 
             sw.Start();
-            //yield return importer.ImportRoutine(x => dataset = x);
             dataset = importer.Import();
             sw.Stop();
             sb.AppendLine("Import_Time: " + sw.ElapsedMilliseconds + " ms");
@@ -126,9 +123,7 @@ public class ImportRAWModel : MonoBehaviour
             if (dataset != null)
             {
                 // Create the Volume Object
-                //VolumeObjectFactory.CreateObject(dataset);
                 VolumeRenderedObject vol;
-                //yield return StartCoroutine(VolumeObjectFactory.CreateObjectRoutine(dataset, x => vol = x));
                 VolumeObjectFactory.CreateObject(dataset);
 
                 sw.Stop();
@@ -163,18 +158,11 @@ public class ImportRAWModel : MonoBehaviour
 
                 if (DICOMMetaReader.GetThickness() > 0)
                 {
-                    // volobj.gameObject.transform.localScale = new Vector3((initData.dimX *DICOMMetaReader.getThickness())/ 1000, (initData.dimY * DICOMMetaReader.getThickness()) / 1000, (initData.dimZ * DICOMMetaReader.getThickness()) / 1000);
-
-                    // DICOMMetaReader.getThickness()
-                    // volobj.gameObject.transform.localScale = new Vector3((initData.dimX * 0.46875f) / 1000, (initData.dimY * 0.46875f) / 1000, (initData.dimZ * 0.46875f) / 1000);
-
                     volobj.gameObject.transform.localScale = new Vector3((InitalizationData.dimX * DICOMMetaReader.GetPixelSpacingX() * 1.0f) / 1000, (InitalizationData.dimY * 1.0f * DICOMMetaReader.GetPixelSpacingX()) / 1000, (InitalizationData.dimZ * 1.0f * DICOMMetaReader.GetThickness()) / 1000);
 
                     sw.Stop();
                     sb.AppendLine("VolumeObjectThicknessScaling: " + sw.ElapsedMilliseconds + " ms");
                     sw.Restart();
-
-                    //yield return null;
                 }
                 volobj.gameObject.AddComponent(typeof(MoveCube));
             }

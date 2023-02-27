@@ -63,23 +63,7 @@ public class LoadModelPath : MonoBehaviour
             }
 
             var path = ImportRAWModel.ModelPath;
-           /* if (!File.Exists(path))
-            {
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine(ImportRAWModel.ModelPath);
-                }
 
-            }
-            else
-            {
-                using (StreamWriter sw = File.AppendText(path))
-                {
-                    sw.WriteLine(ImportRAWModel.ModelPath);
-                }
-            }*/
-
-            //modelPath += "/" + modelName;
             Console.WriteLine("Using default model at " + ImportRAWModel.ModelPath);
         }
         else
@@ -90,12 +74,10 @@ public class LoadModelPath : MonoBehaviour
             {
                 var firstFilename = GetFirstFilenameInPath(ImportRAWModel.AssetFolderPath);
                 ImportRAWModel.ModelName = firstFilename;
-                //modelPath = Application.streamingAssetsPath + "/" + ImportRAWModel.DefaultModelName;    
             }
 
         }
 
-        //ImportRAWModel.SetModelPath(modelPath);
         Debug.Log("Model path load - " + ImportRAWModel.ModelPath);
 
 

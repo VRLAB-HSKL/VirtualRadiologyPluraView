@@ -40,16 +40,6 @@ namespace UnityVolumeRendering
                 RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, ImportRAWModel.AssetFolderPath);
             }
 
-            /*if (GUILayout.Button("Import PARCHG dataset"))
-            {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenPARDatasetResult, "DataFiles");
-            }*/
-
-           /* if (GUILayout.Button("Import DICOM dataset"))
-            {
-                RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
-            }*/
-
             // Show button for opening the dataset editor (for changing the visualisation)
             if (GameObject.FindObjectOfType<VolumeRenderedObject>() != null && GUILayout.Button("Edit imported dataset"))
             {
@@ -61,11 +51,6 @@ namespace UnityVolumeRendering
             {
                 EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
             }
-
-          /*  if (GUILayout.Button("Show distance measure tool"))
-            {
-                DistanceMeasureTool.ShowWindow();
-            }*/
 
             GUILayout.EndVertical();
 

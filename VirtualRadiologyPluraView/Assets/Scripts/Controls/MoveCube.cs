@@ -26,13 +26,6 @@ public class MoveCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Vector3 m = new Vector3(move.x * 5, 0, move.y * 5);
-        // Debug.Log(m);
-        // GetComponent<Transform>().Translate(m * Time.deltaTime);
-        // transform.Translate(m * Time.deltaTime);
-        // GetComponent<Rigidbody>().velocity = m;
-
-        // transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
 		var trans = new Vector3(move.x, move.y, move.z);
 		var newPos = transform.position + trans;
