@@ -1,0 +1,15 @@
+This project uses the following libraries:
+
+UnityVolumeRendering
+released under MIT.
+https://github.com/mlavik1/UnityVolumeRendering
+
+
+SpaceNavigator
+released under MIT.
+https://github.com/PatHightree/SpaceNavigator
+
+
+VirtualRadiology
+released under CC0-1.0 license.
+https://github.com/VRLAB-HSKL/VirtualRadiology

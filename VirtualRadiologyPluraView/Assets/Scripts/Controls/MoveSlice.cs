@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveSlice : MonoBehaviour
+{
+    public float moveSpeed = 1;
+    PlayerControls controls;
+    Vector3 move;
+    Vector3 rotate;
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+
+
+        controls.PlayerMovement.Movement.performed += cntxt => move = cntxt.ReadValue<Vector3>();
+        controls.PlayerMovement.Movement.canceled += cntxt => move = Vector3.zero;
+
+        controls.PlayerMovement.Rotation.performed += cntxt => rotate = cntxt.ReadValue<Vector3>();
+        controls.PlayerMovement.Rotation.canceled += cntxt => rotate = Vector3.zero;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        var trans = new Vector3(move.x, move.y, move.z);
+        var newPos = transform.position + trans;
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            newPos,
+            moveSpeed * Time.deltaTime * trans.magnitude
+        );
+
+
+        transform.Rotate(Vector3.up * rotate.y, Space.World);
+        transform.Rotate(Vector3.forward * rotate.z, Space.World);
+        transform.Rotate(Vector3.right * rotate.x, Space.World);
+    }
+
+    void OnEnable()
+    {
+        controls.PlayerMovement.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.PlayerMovement.Disable();
+    }
+
+    private void OnResetObject()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        transform.rotation = Quaternion.Euler(90, 0, 0);
+
+
+    }
+}
