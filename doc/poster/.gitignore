@@ -1,0 +1,53 @@
+# gitignore for latex
+
+# directories for pdf-files
+#**/[Ff]ertig/
+#**/[Aa]rchiv*/
+#main/*.pdf
+#main/*.synctex
+*.pdf
+
+# Schnipsel
+**/[Ss]chnipsel/
+
+# winedt project files
+**/*.bak
+**/*.prj
+
+/installs/
+**/*.aux
+**/*.glo
+**/*.idx
+**/*.log
+**/*.toc
+**/*.ist
+**/*.acn
+**/*.acr
+**/*.alg
+**/*.bbl
+**/*.blg
+**/*.dvi
+**/*.glg
+**/*.gls
+**/*.ilg
+**/*.ind
+**/*.lof
+**/*.lot
+**/*.maf
+**/*.mtc
+**/*.mtc1
+**/*.out
+**/*.vrb
+**/*.nav
+**/*.smn
+**/*.snm
+**/*.out
+**/*.ps
+**/*.synctex
+**/*.synctex.gz
+
+# vi backups
+**/*~
+
+# Lockfiles OpenOffice
+**/*~lock.*
