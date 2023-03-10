@@ -47,6 +47,16 @@
 
 \usepackage{multicol}
 
+\usepackage{url}
+
+\usepackage{bibgerm}
+
+\usepackage{hyperref}
+
+\usepackage[misc]{ifsym}
+
+\usepackage{enumitem}
+
 \newcommand{\imagePath}{./figures}
 
 \graphicspath{{figures/}} % Location of the graphics files
@@ -90,11 +100,8 @@
 
     \begin{figure}
         \centering
-        
-        \includegraphics[width=0.76\textwidth]{workflow}
-        %\includegraphics[width=0.38\textwidth]{tableCurve}
-        %\includegraphics[width=0.275\textwidth]{airplaneSingle}
-                
+        % \includegraphics[width=0.76\textwidth]{workflow}
+        \includegraphics[height=21cm]{workflow}
     \end{figure}
 %
 %\begin{itemize}
@@ -120,10 +127,8 @@
     \begin{figure}
         \centering
         
-        \includegraphics[width=1.0\textwidth]{pythonApplication01}
-        %\includegraphics[width=0.38\textwidth]{tableCurve}
-        %\includegraphics[width=0.275\textwidth]{airplaneSingle}
-                
+        % \includegraphics[width=1.0\textwidth]{pythonApplication01}
+        \includegraphics[height=21cm]{pythonApplication01}
     \end{figure}
 %
 %\begin{itemize}
@@ -152,8 +157,8 @@
 
 \begin{block}{Technologien}
    \begin{figure}
-       \includegraphics[width=0.6\textwidth]{pluraviewTechnologie}
-       \includegraphics[width=0.3735\textwidth]{spacenagivator\_dof}
+       \includegraphics[height=12cm]{pluraviewTechnologie}
+       \includegraphics[height=12cm]{spacenagivator\_dof}
    	 % \includegraphics[height=14.25cm]{hmd}\hspace*{0.25cm}
        %\includegraphics[height=14.25cm]{dxrWorkspace}
    	 % \includegraphics[height=14.25cm]{hmdSmall}
@@ -184,7 +189,7 @@
 
 \begin{block}{PluraView + Polfilterbrille}
    \begin{figure}
-       \includegraphics[width=.7\textwidth]{pluraviewBrille}
+       \includegraphics[height=12cm]{pluraviewBrille}
    \end{figure}
     %\vspace{140px}
     %\begin{figure}
@@ -228,7 +233,7 @@
 %    %\vspace{140px}
     \begin{figure}
     	\center
-        \includegraphics[width=0.75\textwidth]{KopfTransferfunktion}
+        \includegraphics[width=0.7\textwidth]{KopfTransferfunktion}
 %        \includegraphics[width=0.5\textwidth]{airplanes}
         
 %        %\hspace*{0.25cm}
@@ -252,7 +257,7 @@
   
     \begin{figure}
     	\center
-        \includegraphics[width=0.75\textwidth]{KnieTransferfunktion}
+        \includegraphics[width=0.7\textwidth]{KnieTransferfunktion}
 %        \includegraphics[width=0.5\textwidth]{airplanes}
         
 %        %\hspace*{0.25cm}
@@ -284,10 +289,11 @@
 
 \begin{block}{Einstellungen}
 
+    \newcommand{\imgheight}{127mm}
     \begin{figure}
     	\center
-        \includegraphics[width=0.35\textwidth]{editMenu}
-        \includegraphics[width=0.5475\textwidth]{transferfunction}
+        \includegraphics[height=\imgheight]{editMenu}
+        \includegraphics[height=\imgheight]{transferfunction}
     \end{figure}
 
 
@@ -351,6 +357,27 @@
 
 
 \begin{block}{Kontakt}
+\begin{columns}[t]
+\begin{column}{.4\textwidth}
+\begin{figure}[h]
+% \vspace*{-1.0cm}
+\centering
+\includegraphics[width=.9\textwidth]{qrcode}
+\vspace*{9mm}
+\end{figure}
+\end{column}
+
+
+
+\begin{column}{.6\textwidth}
+\vspace*{3.0cm}
+\begin{itemize}[leftmargin=0pt]
+    \item[] \Letter\ \href{rafaelhoock@gmail.com}{rafaelhoock@gmail.com}
+    \item[] \Letter\ \href{manfred.brill@hs-kl.de}{manfred.brill@hs-kl.de}
+    \item[] \includegraphics[scale=0.55]{github-mark} \href{https://github.com/VRLAB-HSKL/VirtualRadiologyPluraView}{github.com/VRLAB-HSKL/VirtualRadiologyPluraView}
+\end{itemize}
+\end{column}
+\end{columns}
 
 \end{block}
 
@@ -359,10 +386,9 @@
 \begin{column}{.025\textwidth}\end{column} % Empty spacer column
 
 \begin{column}{.465\textwidth}
-
+\nocite{*} % Alles zitieren in sample.bib
 \begin{block}{Literatur}
-  \bibliographystyle{geralpha}
-  \nocite{pries:19}
+ \bibliographystyle{eg-alpha-doi}
  \bibliography{sample}
 \end{block}
 
@@ -393,14 +419,7 @@
 
 
 
-% No cite to show sources without specific \ref call in text file
-\nocite{*}
 
-%\begin{block}{Literatur}
- %  \bibliographystyle{geralpha}
- %  \nocite{pries:19}
-%  \bibliography{sample}
-%\end{block}
 
 \end{frame} % End of the enclosing frame
 
